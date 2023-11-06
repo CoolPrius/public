@@ -35,31 +35,62 @@ The IP 172.16.0.4 is the Private IP of the Azure Firewall, 172.20.0.0/26 is the 
 
 Due to the "DenyAll" rule on both flow of this NSG, traffic can neither come in or leave this subnet (except internet-bound traffic).
 
+
+
 ![Alt text](image-1.png)
+
+
 
 You can see, testvm01 is able to reach the internet with the Firewalls public IP.
 
 ![Alt text](image-2.png)
 
+
+
 It is not able to ping a resource in the prod subnet however.
 
-Now that we have established that this VM is So lets say we want the jumpbox in the prod virtual network to be able to ping into the testvm01 within the DMZ
+
+
+Now that we have established that this VM is segmented completely out of the local virtual networks in the environmet, lets say we want a jumpbox in the prod virtual network to be able to ping and RDP into the testvm01 within the DMZ.
+
+
+These are our VMs with their IPs
+
+![Alt text](image-7.png)
+
+I'll add two rules, one to allow RDP connectivity from the prod network and another to allow ICMP connectivity from the same prod network into the DMZ subnet. You may also notice the Bastion rule which is how I was able to connect to the testvm01 in the first place.
+
+
 
 ![Alt text](image-3.png)
 
 
+I'm now able to ping testvm01 from jumpbox01 in the prod virtual network.
 
 ![Alt text](image-4.png)
+
+
+
+Also can RDP into the testvm01 as well.
 
 
 
 ![Alt text](image-5.png)
 
 
+
+
+If I try to ping back the other direction from the DMZ into our prod virtual network I am not able to do so.
+
+
+
+
 ![Alt text](image-6.png)
 
 
-![Alt text](image-7.png)
+
+
+
 
 Conclusion
 
