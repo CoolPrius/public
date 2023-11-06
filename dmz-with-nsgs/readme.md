@@ -1,3 +1,6 @@
+A DMZ in the context of explicit internet access
+
+
 In the ever-evolving landscape of cybersecurity, organizations must continually adapt to protect their digital assets. In this context, a Demilitarized Zone (DMZ) plays a critical role in safeguarding an enterprise virtual network from external threats. Azure Network Security Groups (NSGs) offer a no-cost solution to establish and manage a DMZ within an enterprise virtual network, enhancing security and providing a range of benefits. This article explores the advantages of using an Azure NSG as a DMZ in a virtual network.
 
 This specific example dives into the way an NSG could be utilized as a DMZ within an Azure firewall/NVA environment but this could easily be modified to work a similar way with a NAT gateway or load balancer for external outbound internet traffic mechanisms.
@@ -47,7 +50,7 @@ You can see, testvm01 is able to reach the internet with the Firewalls public IP
 
 
 
-It is not able to ping a resource in the prod subnet however.
+It is not able to ping the jumpbox01 in the prod subnet however.
 
 
 
@@ -94,6 +97,6 @@ If I try to ping back the other direction from the DMZ into our prod virtual net
 
 Conclusion
 
-In today's digital age, protecting an enterprise network from external threats is of paramount importance. Azure Network Security Groups offer a robust and efficient solution for establishing a DMZ within your network, delivering multiple benefits. With improved network segmentation, scalability, centralized policy management, fine-grained access control, threat mitigation, and monitoring capabilities, Azure NSGs empower organizations to fortify their security posture.
+We have an environment where an insecure resource can sit in a DMZ subnet and only be able to access the internet through an Azure Firewall, NVA, NAT Gateway or Load Balancer while still allowing resources in other virtual networks to access it.  
 
 By leveraging Azure NSGs as a DMZ, enterprises can enhance their network security, mitigate risks, and ensure the confidentiality, integrity, and availability of their valuable assets. As cyber threats continue to evolve, adopting solutions like Azure NSGs is a proactive step toward safeguarding the digital infrastructure of the enterprise.
