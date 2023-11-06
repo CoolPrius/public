@@ -1,4 +1,6 @@
-In the ever-evolving landscape of cybersecurity, organizations must continually adapt to protect their digital assets. In this context, a Demilitarized Zone (DMZ) plays a critical role in safeguarding an enterprise virtual network from external threats. Azure Network Security Groups (NSGs) offer a powerful solution to establish and manage a DMZ within an enterprise network, enhancing security and providing a range of benefits. This article explores the advantages of using Azure NSGs as a DMZ in an enterprise network.
+In the ever-evolving landscape of cybersecurity, organizations must continually adapt to protect their digital assets. In this context, a Demilitarized Zone (DMZ) plays a critical role in safeguarding an enterprise virtual network from external threats. Azure Network Security Groups (NSGs) offer a no-cost solution to establish and manage a DMZ within an enterprise virtual network, enhancing security and providing a range of benefits. This article explores the advantages of using an Azure NSG as a DMZ in a virtual network.
+
+This specific example dives into the way an NSG could be utilized as a DMZ within an Azure firewall/NVA environment but this could easily be modified to work a similar way with a NAT gateway or load balancer for external outbound internet traffic mechanisms.
 
 What is a DMZ?
 
@@ -7,22 +9,22 @@ A DMZ is a network segment that acts as an intermediary between the internal net
 The Benefits of Azure NSGs as a DMZ
 
 -Improved Network Segmentation:
-Azure NSGs enable organizations to create a logical DMZ, allowing for better network segmentation. By defining and applying rules to NSGs, you can control traffic flow between different network segments within your enterprise, ensuring that only authorized connections are established. This level of granularity enhances network security by reducing the attack surface.
+Azure NSGs enable organizations to create a logical DMZ, allowing for better network segmentation. By defining and applying rules to NSGs, you can control traffic flow between different network segments within your environment, ensuring that only authorized connections are established. This level of granularity enhances network security by reducing the attack surface.
 
 -Scalability and Flexibility:
 Azure NSGs provide flexibility and scalability, which is essential for modern enterprise networks. As your organization grows, NSGs can be easily adjusted to accommodate new resources and services. Whether you're deploying web applications, databases, or virtual machines, NSGs allow you to adapt the DMZ configuration to meet evolving security needs.
 
 -Rule-Based Access Control:
-Azure NSGs operate based on rule sets, allowing administrators to define which traffic is allowed and which is blocked. This rule-based access control is highly customizable, enabling fine-grained control over network traffic. You can specify the source and destination, ports, and protocols, allowing for comprehensive protection of your assets.
-
--Threat Mitigation:
-Azure NSGs include various threat mitigation features, such as Distributed Denial of Service (DDoS) protection. By implementing NSGs in your Virtual Networks, you can mitigate DDoS attacks and protect your network resources from being overwhelmed by malicious traffic. These built-in security features provide an added layer of defense.
+Azure NSGs operate based on rule sets, allowing administrators to define which traffic is allowed and which is blocked. This rule-based access control is highly customizable, enabling fine-grained control over network traffic. You can specify the source and destination, ports, and protocols.
 
 -Monitoring and Logging:
-Azure NSGs offer extensive monitoring and logging capabilities. By leveraging these features, organizations can gain insight into network traffic, detect anomalies, and investigate security incidents. Detailed logs help in auditing and compliance efforts, ensuring that security standards are met.
+Azure NSGs offer extensive monitoring and logging capabilities. By leveraging these features, organizations can gain insight into network traffic, detect anomalies, and investigate security incidents. This could be extremely helpful for a DMZ NSG as alert rules could be created based off of certain behavior of traffic in the DMZ and could be put forward as higher priority alert in order to provide advanced warning if a threat actor is attempting to gain access to your network through a less secure resource in the DMZ.
 
--Integration with Azure Security Center:
-Azure NSGs seamlessly integrate with Azure Security Center, a unified security management system. This integration provides enhanced visibility into your security posture, offers actionable security recommendations, and enables rapid incident response.
+
+What would a DMZ within an NSG look like from a high level view?
+
+[insert topolocy here]
+
 
 Conclusion
 
