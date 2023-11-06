@@ -80,7 +80,7 @@ Also can RDP into the testvm01 as well.
 
 
 
-If I try to ping back the other direction from the DMZ into our prod virtual network I am not able to do so.
+If I try to ping back the other direction from the DMZ into our prod virtual network I am still not able to do so.
 
 
 
