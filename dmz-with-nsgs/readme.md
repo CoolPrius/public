@@ -1,4 +1,4 @@
-In the ever-evolving landscape of cybersecurity, organizations must continually adapt to protect their digital assets. In this context, a Demilitarized Zone (DMZ) plays a critical role in safeguarding an enterprise network from external threats. Azure Network Security Groups (NSGs) offer a powerful solution to establish and manage a DMZ within an enterprise network, enhancing security and providing a range of benefits. This article explores the advantages of using Azure NSGs as a DMZ in an enterprise network.
+In the ever-evolving landscape of cybersecurity, organizations must continually adapt to protect their digital assets. In this context, a Demilitarized Zone (DMZ) plays a critical role in safeguarding an enterprise virtual network from external threats. Azure Network Security Groups (NSGs) offer a powerful solution to establish and manage a DMZ within an enterprise network, enhancing security and providing a range of benefits. This article explores the advantages of using Azure NSGs as a DMZ in an enterprise network.
 
 What is a DMZ?
 
