@@ -35,9 +35,31 @@ The IP 172.16.0.4 is the Private IP of the Azure Firewall, 172.20.0.0/26 is the 
 
 Due to the "DenyAll" rule on both flow of this NSG, traffic can neither come in or leave this subnet (except internet-bound traffic).
 
-![You can see, testvm01 is able to reach the internet with the Firewalls public IP](image-1.png)
+![Alt text](image-1.png)
 
-![It is not able to ping a resource in the prod subnet however](image-2.png)
+You can see, testvm01 is able to reach the internet with the Firewalls public IP.
+
+![Alt text](image-2.png)
+
+It is not able to ping a resource in the prod subnet however.
+
+Now that we have established that this VM is So lets say we want the jumpbox in the prod virtual network to be able to ping into the testvm01 within the DMZ
+
+![Alt text](image-3.png)
+
+
+
+![Alt text](image-4.png)
+
+
+
+![Alt text](image-5.png)
+
+
+![Alt text](image-6.png)
+
+
+![Alt text](image-7.png)
 
 Conclusion
 
