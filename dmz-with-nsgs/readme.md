@@ -25,6 +25,10 @@ What would a DMZ within an NSG look like from a high level view?
 
 [insert topolocy here]
 
+So now we know the architecture, here's what our baseline rule set would look like.
+
+![Alt text](image.png)
+
 
 Conclusion
 
