@@ -12,14 +12,11 @@ Azure NSGs enable organizations to create a logical DMZ, allowing for better net
 -Scalability and Flexibility:
 Azure NSGs provide flexibility and scalability, which is essential for modern enterprise networks. As your organization grows, NSGs can be easily adjusted to accommodate new resources and services. Whether you're deploying web applications, databases, or virtual machines, NSGs allow you to adapt the DMZ configuration to meet evolving security needs.
 
--Centralized Network Security Policy:
-One of the key advantages of using Azure NSGs as a DMZ is the ability to centrally manage network security policies. This centralized control streamlines the process of implementing security rules across your entire Azure network, making it easier to maintain a consistent security posture and enforce best practices.
-
 -Rule-Based Access Control:
 Azure NSGs operate based on rule sets, allowing administrators to define which traffic is allowed and which is blocked. This rule-based access control is highly customizable, enabling fine-grained control over network traffic. You can specify the source and destination, ports, and protocols, allowing for comprehensive protection of your assets.
 
 -Threat Mitigation:
-Azure NSGs include various threat mitigation features, such as Distributed Denial of Service (DDoS) protection. By implementing NSGs in your DMZ, you can mitigate DDoS attacks and protect your network resources from being overwhelmed by malicious traffic. These built-in security features provide an added layer of defense.
+Azure NSGs include various threat mitigation features, such as Distributed Denial of Service (DDoS) protection. By implementing NSGs in your Virtual Networks, you can mitigate DDoS attacks and protect your network resources from being overwhelmed by malicious traffic. These built-in security features provide an added layer of defense.
 
 -Monitoring and Logging:
 Azure NSGs offer extensive monitoring and logging capabilities. By leveraging these features, organizations can gain insight into network traffic, detect anomalies, and investigate security incidents. Detailed logs help in auditing and compliance efforts, ensuring that security standards are met.
