@@ -12,7 +12,7 @@ What is a DMZ?
 
 A DMZ is a network segment that acts as an intermediary between the internal network (trusted zone) and the external network (untrusted zone). It serves as a buffer, allowing controlled communication between these two zones while safeguarding sensitive resources. In traditional setups, a physical DMZ involves multiple layers of firewall systems and intricate configurations.
 
-The Benefits of Azure NSGs as a DMZ
+The Benefits of Azure NSGs as a DMZ:
 
 - Enhanced Network Segmentation:
 Azure NSGs empower organizations to establish a logical DMZ, facilitating improved network segmentation. By defining and applying rules to NSGs, administrators can exercise precise control over traffic flow between various network segments within the environment. This level of granularity enhances network security by reducing the attack surface.
@@ -34,7 +34,9 @@ What would a DMZ within an NSG look like from a high level view?
 
 
 
-For the purpose of this demp, we've interconnected all virtual networks through peering, effectively forming a mesh network.
+For the purpose of this demo, we've interconnected all virtual networks through peering, effectively forming a mesh network.
+
+## Establishing Baseline Rules
 
 So now we know the architecture, here's what our baseline rule set would look like.
 
@@ -50,7 +52,7 @@ So now we know the architecture, here's what our baseline rule set would look li
 
 - The "DenyAll" rule on both inbound and outbound flows of this NSG restricts all traffic except internet-bound traffic.
 
-
+## Testing Internet Connectivity
 
 We observe that "testvm01" can reach the internet using the Firewall's public IP:
 
@@ -68,7 +70,7 @@ However, it cannot ping "jumpbox01" in the production vNet:
 
 
 
-
+## Enabling RDP and ICMP Connectivity
 
 Suppose we want "jumpbox01" in the production network to ping and RDP into "testvm01" in the DMZ. Here are the VMs and their IPs again:
 
@@ -81,7 +83,7 @@ We will add two rules: one for RDP connectivity from the production network and 
 
 ![Alt text](image-3.png)
 
-
+## Ping and RDP Results
 
 With these rules in place, we can now ping "testvm01" from "jumpbox01" in the production virtual network:
 
@@ -98,7 +100,7 @@ Additionally, we can RDP into "testvm01":
 ![Alt text](image-5.png)
 
 
-
+## Ensuring Unidirectional Connectivity
 
 However, attempting to ping from the DMZ back into the production virtual network remains unsuccessful:
 
