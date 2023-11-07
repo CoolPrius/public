@@ -24,27 +24,38 @@ Monitoring and Logging:
 Azure NSGs offer robust monitoring and logging capabilities. By leveraging these features, organizations can gain valuable insights into network traffic, promptly detect anomalies, and investigate security incidents. For a DMZ NSG, this capability is particularly valuable, as it allows the creation of alert rules based on specific traffic behavior within the DMZ. These alerts can be designated as high-priority, providing advanced warning in case a threat actor attempts to gain access to the network through a less secure DMZ resource.
 
 
+
+//Visualizing the DMZ//
+
+
 What would a DMZ within an NSG look like from a high level view?
 
 ![Alt text](dmz-with-nsgs.png)
 
-For the sake of this article, I peered all the virtual networks together to create a mesh network.
+
+
+For the purpose of this article, we've interconnected all virtual networks through peering, effectively forming a mesh network.
 
 So now we know the architecture, here's what our baseline rule set would look like.
 
 ![Alt text](image.png)
 
-The IP 172.16.0.4 is the Private IP of the Azure Firewall, 172.20.0.0/26 is the subnet of the DMZ. We have two rulesets, one for allowing the traffic in general to reach the firewall and another for allowing the "internet" tagged traffic through the firewall. The combination of these two rules are needed in order to allow internet connectivity from a resource in the DMZ subnet to the internet. 
 
-Due to the "DenyAll" rule on both flows of this NSG, traffic can neither come in or leave this subnet (except internet-bound traffic).
 
-You can see, testvm01 is able to reach the internet with the Firewalls public IP.
+- IP 172.16.0.4 represents the Private IP of the Azure Firewall.
+
+- The 172.20.0.0/26 subnet is designated as the DMZ.
+
+- We have two rulesets: one for general traffic to reach the firewall and another for allowing "internet" tagged traffic to pass through the firewall. These rules collectively enable internet connectivity from a resource in the DMZ subnet.
+
+- The "DenyAll" rule on both inbound and outbound flows of this NSG restricts all traffic except internet-bound traffic.
+
+We observe that "testvm01" can reach the internet using the Firewall's public IP:
 
 ![Alt text](image-1.png)
 
 
-It is not able to ping the jumpbox01 in the prod subnet however.
-
+However, it cannot ping "jumpbox01" in the production vNet:
 
 ![Alt text](image-2.png)
 
@@ -54,27 +65,28 @@ It is not able to ping the jumpbox01 in the prod subnet however.
 
 
 
-Now that we have established that this VM is segmented completely out of the local virtual networks in the environmet, lets say we want a jumpbox in the prod virtual network to be able to ping and RDP into the testvm01 within the DMZ.
+Suppose we want "jumpbox01" in the production network to ping and RDP into "testvm01" in the DMZ. Here are the VMs and their IPs:
 
-
-These are our VMs with their IPs
 
 ![Alt text](image-7.png)
 
-I'll add two rules, one to allow RDP connectivity from the prod network and another to allow ICMP connectivity from the same prod network into the DMZ subnet. You may also notice the Bastion rule which is how I was able to connect to the testvm01 in the first place.
+We will add two rules: one for RDP connectivity from the production network and another for ICMP connectivity from the same production network into the DMZ subnet. The "Bastion" rule enables our initial connectivity to "testvm01" for this lab.
 
 
 
 ![Alt text](image-3.png)
 
 
-I'm now able to ping testvm01 from jumpbox01 in the prod virtual network.
+
+With these rules in place, we can now ping "testvm01" from "jumpbox01" in the production virtual network:
+
+
 
 ![Alt text](image-4.png)
 
 
 
-Also can RDP into the testvm01 as well.
+Additionally, we can RDP into "testvm01":
 
 
 
@@ -83,7 +95,7 @@ Also can RDP into the testvm01 as well.
 
 
 
-If I try to ping back the other direction from the DMZ into our prod virtual network I am still not able to do so.
+However, attempting to ping from the DMZ back into the production virtual network remains unsuccessful:
 
 
 
@@ -97,6 +109,6 @@ If I try to ping back the other direction from the DMZ into our prod virtual net
 
 Conclusion
 
-We have an environment where an insecure resource can sit in a DMZ subnet and only be able to access the internet through an Azure Firewall, NVA, NAT Gateway or Load Balancer while still allowing resources in other virtual networks to access it.  
+In this environment, we've effectively established a DMZ subnet, ensuring that an unsecured resource can access the internet through an Azure Firewall, NVA, NAT Gateway, or Load Balancer while still allowing resources in other virtual networks to interact with it through a single direction.
 
 By leveraging Azure NSGs as a DMZ, enterprises can enhance their network security, mitigate risks, and ensure the confidentiality, integrity, and availability of their valuable assets. As cyber threats continue to evolve, adopting solutions like Azure NSGs is a proactive step toward safeguarding the digital infrastructure of the enterprise.
