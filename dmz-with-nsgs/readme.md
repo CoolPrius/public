@@ -114,7 +114,7 @@ However, attempting to ping from the DMZ back into the production virtual networ
 
 
 
-Conclusion
+# Conclusion
 
 In this environment, we've effectively established a DMZ subnet, ensuring that an unsecured resource can access the internet through an Azure Firewall, NVA, NAT Gateway, or Load Balancer while still allowing resources in other virtual networks to interact with it through a single direction.
 
