@@ -1,8 +1,8 @@
 # A DMZ in the Context of Explicit Internet Access
 
-When designing and building enterprise-level environments, I often grapple with determining the "right" approach for certain tasks. Recently, one of these areas has been the implementation of a Demilitarized Zone (DMZ) within an environment that leverages Azure Firewall or Network Virtual Appliances (NVAs).
+When designing and building enterprise networking environments in Azure, I often grapple with determining the "right" approach for various solutions, as there are often multiple paths to achieving the same objective. Recently, one of these areas has been the implementation of a Demilitarized Zone (DMZ) within an environment that leverages Azure Firewall or Network Virtual Appliances (NVAs).
 
-The conventional method might involve creating a route table that directs all peered traffic between virtual networks to the Firewall for inspection. This approach allows for the creation of various rulesets to disallow traffic, effectively establishing a DMZ. However, it can also introduce management complexities and leave room for potential rule chain errors. In this article, we will delve into the advantages of utilizing an Azure NSG as a DMZ within a virtual network in an enterprise-level environment featuring Firewall appliances.
+The conventional method might involve creating a route table that directs all peered traffic between virtual networks to the Firewall for inspection. This approach allows for the creation of various rulesets to disallow traffic, effectively establishing a DMZ. However, it can also introduce management complexities and leave room for potential rule chain errors downstream effecting a DMZ. In this article, we will delve into the advantages of utilizing an Azure NSG as a DMZ within a virtual network in an enterprise environment featuring Firewall appliances.
 
 Azure Network Security Groups (NSGs) provide a no-cost solution for establishing and managing a DMZ within an enterprise virtual network. Since the NSG sits on the subnet as its own logical access control mechanism, it provides a higher level of granularity while being less prone to rule changes on the firewall potentially poking holes in the DMZ. This not only enhances security but also offers a host of benefits. 
 
@@ -10,7 +10,7 @@ This specific example explores how an NSG can be effectively utilized as a DMZ w
 
 ## What is a DMZ?
 
-A DMZ is a network segment that acts as an intermediary between the internal network (trusted zone) and the external network (untrusted zone). It serves as a buffer, allowing controlled communication between these two zones while safeguarding sensitive resources. In traditional setups, a physical DMZ involves multiple layers of firewall systems and intricate configurations.
+A DMZ is a network segment that acts as an intermediary between the internal network (trusted zone) and the external network (untrusted zone). It serves as a buffer, allowing controlled communication between these two zones while safeguarding sensitive resources. In traditional infrastructure, a physical DMZ involves multiple layers of firewall systems and intricate configurations.
 
 ### The Benefits of Azure NSGs as a DMZ:
 
