@@ -14,13 +14,13 @@ A DMZ is a network segment that acts as an intermediary between the internal net
 
 The Benefits of Azure NSGs as a DMZ
 
-Enhanced Network Segmentation:
+- Enhanced Network Segmentation:
 Azure NSGs empower organizations to establish a logical DMZ, facilitating improved network segmentation. By defining and applying rules to NSGs, administrators can exercise precise control over traffic flow between various network segments within the environment. This level of granularity enhances network security by reducing the attack surface.
 
-Rule-Based Access Control:
+- Rule-Based Access Control:
 Azure NSGs operate based on rule sets, granting administrators the ability to specify which traffic is permitted and which is blocked. This rule-based access control is highly customizable, enabling fine-grained control over network traffic. Administrators can define source and destination, ports, protocols, and service tags to create comprehensive security policies.
 
-Monitoring and Logging:
+- Monitoring and Logging:
 Azure NSGs offer robust monitoring and logging capabilities. By leveraging these features, organizations can gain valuable insights into network traffic, promptly detect anomalies, and investigate security incidents. For a DMZ NSG, this capability is particularly valuable, as it allows the creation of alert rules based on specific traffic behavior within the DMZ. These alerts can be designated as high-priority, providing advanced warning in case a threat actor attempts to gain access to the network through a less secure DMZ resource.
 
 
