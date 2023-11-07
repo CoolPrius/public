@@ -1,4 +1,4 @@
-A DMZ in the Context of Explicit Internet Access
+# A DMZ in the Context of Explicit Internet Access
 
 When designing and building enterprise-level environments, I often grapple with determining the "right" approach for certain tasks. Recently, one of these areas has been the implementation of a Demilitarized Zone (DMZ) within an environment that leverages Azure Firewall or Network Virtual Appliances (NVAs).
 
@@ -25,7 +25,7 @@ Azure NSGs offer robust monitoring and logging capabilities. By leveraging these
 
 
 
-//Visualizing the DMZ//
+# Visualizing the DMZ
 
 
 What would a DMZ within an NSG look like from a high level view?
