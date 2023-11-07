@@ -26,7 +26,7 @@ Azure NSGs offer extensive monitoring and logging capabilities. By leveraging th
 
 What would a DMZ within an NSG look like from a high level view?
 
-[insert topolocy here]
+![\[insert topolocy here\]](d:/Downloads/dmz-with-nsgs.svg)
 
 For the sake of this article, I peered all the virtual networks together to create a mesh network.
 
