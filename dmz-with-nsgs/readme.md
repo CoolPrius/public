@@ -8,11 +8,11 @@ Azure Network Security Groups (NSGs) provide a no-cost solution for establishing
 
 This specific example explores how an NSG can be effectively utilized as a DMZ within an Azure Firewall/NVA environment. However, it's worth noting that this concept can be adapted to work in a similar fashion with a NAT gateway or load balancer for external outbound internet traffic mechanisms.
 
-What is a DMZ?
+## What is a DMZ?
 
 A DMZ is a network segment that acts as an intermediary between the internal network (trusted zone) and the external network (untrusted zone). It serves as a buffer, allowing controlled communication between these two zones while safeguarding sensitive resources. In traditional setups, a physical DMZ involves multiple layers of firewall systems and intricate configurations.
 
-The Benefits of Azure NSGs as a DMZ:
+### The Benefits of Azure NSGs as a DMZ:
 
 - Enhanced Network Segmentation:
 Azure NSGs empower organizations to establish a logical DMZ, facilitating improved network segmentation. By defining and applying rules to NSGs, administrators can exercise precise control over traffic flow between various network segments within the environment. This level of granularity enhances network security by reducing the attack surface.
