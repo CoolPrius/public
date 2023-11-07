@@ -36,21 +36,21 @@ So now we know the architecture, here's what our baseline rule set would look li
 
 The IP 172.16.0.4 is the Private IP of the Azure Firewall, 172.20.0.0/26 is the subnet of the DMZ. We have two rulesets, one for allowing the traffic in general to reach the firewall and another for allowing the "internet" tagged traffic through the firewall. The combination of these two rules are needed in order to allow internet connectivity from a resource in the DMZ subnet to the internet. 
 
-Due to the "DenyAll" rule on both flow of this NSG, traffic can neither come in or leave this subnet (except internet-bound traffic).
+Due to the "DenyAll" rule on both flows of this NSG, traffic can neither come in or leave this subnet (except internet-bound traffic).
 
-
+You can see, testvm01 is able to reach the internet with the Firewalls public IP.
 
 ![Alt text](image-1.png)
 
 
+It is not able to ping the jumpbox01 in the prod subnet however.
 
-You can see, testvm01 is able to reach the internet with the Firewalls public IP.
 
 ![Alt text](image-2.png)
 
 
 
-It is not able to ping the jumpbox01 in the prod subnet however.
+
 
 
 
