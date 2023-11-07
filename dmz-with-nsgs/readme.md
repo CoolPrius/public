@@ -1,4 +1,4 @@
-# A DMZ in the Context of Explicit Internet Access
+# A Azure DMZ in the Context of Explicit Internet Access
 
 When designing and building enterprise networking environments in Azure, I often grapple with determining the "right" approach for various solutions, as there are often multiple paths to achieving the same objective. Recently, one of these areas has been the implementation of a Demilitarized Zone (DMZ) within an environment that leverages Azure Firewall or Network Virtual Appliances (NVAs).
 
