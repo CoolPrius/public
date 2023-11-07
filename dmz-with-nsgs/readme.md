@@ -34,7 +34,7 @@ What would a DMZ within an NSG look like from a high level view?
 
 
 
-For the purpose of this article, we've interconnected all virtual networks through peering, effectively forming a mesh network.
+For the purpose of this demp, we've interconnected all virtual networks through peering, effectively forming a mesh network.
 
 So now we know the architecture, here's what our baseline rule set would look like.
 
@@ -50,12 +50,17 @@ So now we know the architecture, here's what our baseline rule set would look li
 
 - The "DenyAll" rule on both inbound and outbound flows of this NSG restricts all traffic except internet-bound traffic.
 
+
+
 We observe that "testvm01" can reach the internet using the Firewall's public IP:
 
 ![Alt text](image-1.png)
 
 
+
 However, it cannot ping "jumpbox01" in the production vNet:
+
+
 
 ![Alt text](image-2.png)
 
@@ -65,12 +70,12 @@ However, it cannot ping "jumpbox01" in the production vNet:
 
 
 
-Suppose we want "jumpbox01" in the production network to ping and RDP into "testvm01" in the DMZ. Here are the VMs and their IPs:
+Suppose we want "jumpbox01" in the production network to ping and RDP into "testvm01" in the DMZ. Here are the VMs and their IPs again:
 
 
 ![Alt text](image-7.png)
 
-We will add two rules: one for RDP connectivity from the production network and another for ICMP connectivity from the same production network into the DMZ subnet. The "Bastion" rule enables our initial connectivity to "testvm01" for this lab.
+We will add two rules: one for RDP connectivity from the production network and another for ICMP connectivity from the same production network into the DMZ subnet. The "Bastion" rule enables our initial connectivity to "testvm01" for this demo.
 
 
 
